@@ -28,6 +28,12 @@ jobs:
       - name: system resources
         run: |      
           uname -r && uname -m && echo $(nproc) && free -h
+          
+      - name: get the sha
+        run: |   
+          cd robot
+          echo "sha=$(cat shazam.txt)" >> $GITHUB_ENV
+          echo env.sha
 
       # - name: check against the commit ID
       #   run: |
@@ -77,6 +83,7 @@ jobs:
 
       - name: post-pull
         run: |
+          echo env.sha
           sudo apt-get install python3-pip && \
           sudo apt-get install python3.10-venv && \
           sudo python3 -m venv tutorial-env && \
