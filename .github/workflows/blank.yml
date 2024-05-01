@@ -80,7 +80,7 @@ jobs:
           sudo apt-get install python3-pip && \
           sudo apt-get install python3.10-venv && \
           sudo python3 -m venv tutorial-env && \
-          sudo source tutorial-env/bin/activate && \
+          source tutorial-env/bin/activate && \
           pip install b4 && \
           b4 -h
 
