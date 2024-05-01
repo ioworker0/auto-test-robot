@@ -71,6 +71,8 @@ jobs:
 
       - name: b4 shazam
         run: |
+          git config --global user.email "x@example.com"
+          git config --global user.name "X"
           cd linux && b4 shazam ${{ env.sha }}
 
       - name: pre-build kernel arm64
