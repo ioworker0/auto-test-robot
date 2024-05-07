@@ -89,7 +89,7 @@ jobs:
           export ARCH=arm64
           export CROSS_COMPILE="/usr/bin/aarch64-linux-gnu-"
           make olddefconfig
-          make -j$(nproc)
+          make -j$(nproc) CFLAGS_KERNEL="-Werror"
         
       - name: post-build kernel arm64
         run: |  
