@@ -58,8 +58,8 @@ jobs:
       - name: pre-pull
         run: |
           echo ${{ env.sha }}
-          sudo apt-get install python3-pip && \
-          sudo apt-get install python3.10-venv && \
+          sudo apt-get update && \
+          sudo apt-get install python3-pip python3-venv && \
           sudo python3 -m venv tutorial-env && \
           source tutorial-env/bin/activate && \
           sudo pip install b4 && \
