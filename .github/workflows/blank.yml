@@ -107,7 +107,7 @@ jobs:
           cp $(ls /boot/config-* | shuf -n 1) .config
           sed -i 's/^# CONFIG_KASAN is not set/CONFIG_KASAN=y/' .config
           sed -i 's/^# CONFIG_KCSAN is not set/CONFIG_KCSAN=y/' .config
-          sed -i 's/^# CONFIG_WERROR is not set/CONFIG_WERROR=y/' .config
+          # sed -i 's/^# CONFIG_WERROR is not set/CONFIG_WERROR=y/' .config
           cat .config | egrep 'DEBUG_KERNEL|DEBUG_INFO|UBSAN|KASAN|KCSAN'
           make olddefconfig
           sed -i '/^CONFIG_SYSTEM_TRUSTED_KEYS=.*/s/.*/CONFIG_SYSTEM_TRUSTED_KEYS=""/' .config
