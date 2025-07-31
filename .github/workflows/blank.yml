@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 env:
-  BRANCH: mm-unstable
+  BRANCH: lance
   REPO: https://github.com/ioworker0/linux.git
 
 jobs:
